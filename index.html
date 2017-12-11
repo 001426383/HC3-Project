@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>4HC3 Music Player</title>    
+    <meta name="description" content="A music player for CompSci. 4HC3">
+    <meta name="author" content="Sherwin; Matthew; Kabir;">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+</head>
+
+<body>
+    <script src="js/scripts.js"></script>
+    <div id="app" style="width:360px; height:640px; border:2px solid #000; margin:0 auto;">
+        <div id="section_top" style="height:100px;">
+            <input type="image" class='btn' id="btn_settings" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/VisualEditor_-_Icon_-_Settings.svg/2000px-VisualEditor_-_Icon_-_Settings.svg.png" width="36" />
+            <div class="tabcontent" id="tabcontent_settings">
+                <p>Settings</p>
+            </div>
+            
+            <input id="bar_search" type="text" name="search" placeholder="Search Song" maxlength="32">
+            
+            
+            <div class="tabs">
+                <button class="tablinks" id="tablink_library" onclick="openTab(event, 'Library')">LIBRARY</button>
+                <button class="tablinks" id="tablink_playlist" onclick="openTab(event, 'Library')">PLAYLIST</button>
+                <button class="tablinks" id="tablink_queue" onclick="openTab(event, 'Library')">QUEUE</button>
+            </div>    
+                
+            <div class="tabcontent" id="tabcontent_library">
+                <p>Put stuff here.</p>
+            </div>
+            
+            <div class="tabcontent" id="tabcontent_playlist">
+                <p>Put stuff here.</p>
+            </div>
+            
+            <div class="tabcontent" id="tabcontent_queue">
+                <p>Put stuff here.</p>
+            </div>
+        </div>
+        <div id="section_mid" style="height:468px;">
+            <h2 id="text_artist">Pixies - </h2>
+            <h1 id="text_songtitle">Where Is My Mind</h1><br>
+            
+            <input type="image" class='btn' id="btn_repeat" src="https://wattsupwiththat.files.wordpress.com/2012/03/repeating_icon.png" width="36" />
+            <input type="image" class='btn' id="btn_shuffle" src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/media-shuffle.png" width="36" />
+            <input type="image" class='btn' id="btn_play" src="https://images-na.ssl-images-amazon.com/images/I/31CWpfvSQOL.png" width="120" onclick="togglePlayPauseButton();"/>
+        </div>
+        <img id="bar_nav" src="./Resources/navbar.png" alt="navBar" width="360">
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>

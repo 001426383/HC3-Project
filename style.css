@@ -1,0 +1,162 @@
+#app {
+    position:relative;
+}
+#app > * {
+    position:absolute;
+    display:inline-block;
+}
+
+#section_top {
+    background-color: #990033;
+    top:0px;
+    left:0px;
+    width: 360px;
+    height: 300px;
+}
+
+#section_mid {
+    top:0px;
+    left:0px;
+    width: 360px;
+    z-index: -1;
+}
+
+
+#bar_nav {
+    bottom:0px;
+}
+
+#bar_search{
+    position:absolute;
+    width: 260px;
+    top: 20px;
+    left: 80px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #ffe6ee;
+    background-image: url('http://www.2588588.com/images/icons/search.png');
+    background-size: 24px 24px; 
+    background-position: 6px 6px; 
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 46px;
+    
+}
+#bar_search:focus{
+    
+}
+input::placeholder{
+    font-style: italic;
+}
+
+div.tabs {
+    position:absolute;
+    top:80px;
+    width:inherit;
+    overflow: hidden;
+    border: 1px solid inherit;
+    background-color: inherit;
+}
+
+
+div.tabs button {
+    background-color: inherit;
+    float: left;
+    width: 33.33%;
+    width: calc(100%  /3);
+    border: 1px solid #000;
+    
+    border-bottom: none;
+    border-top-width: 2px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color:#FFCC33;
+}
+
+div.tabs button:hover {
+}
+
+div.tabs button:active {
+    background-color: #FFCC33;
+    color:#990033;
+}
+
+
+#tablink_library{
+    border-left:none;
+}
+
+#tablink_queue{
+    border-right:none;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    -webkit-animation: slide 1s;
+    animation: slide 0.5s;
+}
+
+@-webkit-keyframes slide {
+    60% { top: 0; }
+}
+
+@keyframes slide {
+    60% { top: 0; }
+}
+
+
+.btn{
+    position:absolute;
+}
+
+#btn_settings{
+    left: 20px;
+    top: 20px;
+}
+#btn_repeat{
+    top: 550px;
+    left: 50px;
+}
+
+#btn_shuffle{
+    top: 550px;
+    left: 274px;
+}
+
+#btn_play{
+    top: 500px;
+    left: 120px;
+}
+
+h1{
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+}
+
+h2{
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    
+}
+
+h3{
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    
+}
+
+#text_songtitle{
+    position:absolute;
+    top:140px;
+    left:10px;
+}
+#text_artist{
+    position:absolute;
+    top:120px;
+    left:10px;
+}
