@@ -75,14 +75,15 @@ div.tabs button {
     color:#FFCC33;
 }
 
-div.tabs button:hover {
-}
-
-div.tabs button:active {
+div.tabs button:active, div.tabs button:hover {
     background-color: #FFCC33;
     color:#990033;
 }
 
+div.tabs button:focus{
+    background-color: #FFCC33;
+    color:#990033;
+}
 
 #tablink_library{
     border-left:none;
@@ -93,22 +94,45 @@ div.tabs button:active {
 }
 
 .tabcontent {
+    position:absolute;
+    background-color: #666;
+    top: 125px;
+    width: 360px;
+    height: 300px;;
+    
+    box-sizing: border-box;
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-    -webkit-animation: slide 1s;
-    animation: slide 0.5s;
+    border: 1px solid #000;
+    border-left: none;
+    border-right: none;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
 
-@-webkit-keyframes slide {
-    60% { top: 0; }
+#tabcontent_settings{
+    background-color: #990033;
+    top: 0px;
+    width: 360px;
+    height: 598px;;
+    z-index: 1;
+    box-sizing: border-box;
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    
 }
 
-@keyframes slide {
-    60% { top: 0; }
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
 .btn{
     position:absolute;
@@ -118,6 +142,7 @@ div.tabs button:active {
     left: 20px;
     top: 20px;
 }
+
 #btn_repeat{
     top: 550px;
     left: 50px;
@@ -133,21 +158,24 @@ div.tabs button:active {
     left: 120px;
 }
 
-h1{
-    font-family: Tahoma, Geneva, sans-serif;
-    text-align: center;
+#btn_back{
+    top: 600px;
+    left: 40px;
+    width: 80px;
+    height: 40px;
+    background: transparent;
+    border: none !important;
+    font-size:0;
 }
 
-h2{
-    font-family: Tahoma, Geneva, sans-serif;
-    text-align: center;
-    
+#btn_back:active{
+    background-color: #666;
+    transition: 0.3s;
 }
 
-h3{
+h1, h2, h3{
     font-family: Tahoma, Geneva, sans-serif;
     text-align: center;
-    
 }
 
 #text_songtitle{

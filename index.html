@@ -13,30 +13,33 @@
     <script src="js/scripts.js"></script>
     <div id="app" style="width:360px; height:640px; border:2px solid #000; margin:0 auto;">
         <div id="section_top" style="height:100px;">
-            <input type="image" class='btn' id="btn_settings" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/VisualEditor_-_Icon_-_Settings.svg/2000px-VisualEditor_-_Icon_-_Settings.svg.png" width="36" />
+            <input type="image" class='btn' id="btn_settings" onclick="openTab(event,'tabcontent_settings')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/VisualEditor_-_Icon_-_Settings.svg/2000px-VisualEditor_-_Icon_-_Settings.svg.png" width="36" />
+            
             <div class="tabcontent" id="tabcontent_settings">
-                <p>Settings</p>
+                <h1>Settings</h1>
             </div>
             
-            <input id="bar_search" type="text" name="search" placeholder="Search Song" maxlength="32">
-            
+            <input id="bar_search" onclick="openTab(event,'tabcontent_search')" type="text" placeholder="Search Song" maxlength="32">
+            <div class="tabcontent" id="tabcontent_search">
+                <p>Put Search stuff here.</p>
+            </div>
             
             <div class="tabs">
-                <button class="tablinks" id="tablink_library" onclick="openTab(event, 'Library')">LIBRARY</button>
-                <button class="tablinks" id="tablink_playlist" onclick="openTab(event, 'Library')">PLAYLIST</button>
-                <button class="tablinks" id="tablink_queue" onclick="openTab(event, 'Library')">QUEUE</button>
+                <button class="tablinks" id="tablink_library" onclick="openTab(event, 'tabcontent_library')">LIBRARY</button>
+                <button class="tablinks" id="tablink_playlist" onclick="openTab(event, 'tabcontent_playlist')">PLAYLIST</button>
+                <button class="tablinks" id="tablink_queue" onclick="openTab(event, 'tabcontent_queue')">QUEUE</button>
             </div>    
                 
             <div class="tabcontent" id="tabcontent_library">
-                <p>Put stuff here.</p>
+                <p>Put library stuff here.</p>
             </div>
             
             <div class="tabcontent" id="tabcontent_playlist">
-                <p>Put stuff here.</p>
+                <p>Put playlist stuff here.</p>
             </div>
             
             <div class="tabcontent" id="tabcontent_queue">
-                <p>Put stuff here.</p>
+                <p>Put queue stuff here.</p>
             </div>
         </div>
         <div id="section_mid" style="height:468px;">
@@ -48,8 +51,10 @@
             <input type="image" class='btn' id="btn_play" src="https://images-na.ssl-images-amazon.com/images/I/31CWpfvSQOL.png" width="120" onclick="togglePlayPauseButton();"/>
         </div>
         <img id="bar_nav" src="./Resources/navbar.png" alt="navBar" width="360">
+        <button class='btn' id="btn_back" onclick="returnToPlayer(event)"></button>
+        
     </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
-<script src="script.js"></script>
 </html>
