@@ -12,47 +12,271 @@
 <body>
     <script src="js/scripts.js"></script>
     <div id="app" style="width:360px; height:640px; border:2px solid #000; margin:0 auto;">
-        <div id="section_top" style="height:100px;">
-            <input type="image" class='btn' id="btn_settings" onclick="openTab(event,'tabcontent_settings')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/VisualEditor_-_Icon_-_Settings.svg/2000px-VisualEditor_-_Icon_-_Settings.svg.png" width="36" />
+        <div class="msg">
+                
+        </div>
+        
+        <div id="section_top">
+            <input type="image" class='btn' id="btn_settings" onclick="clickSettingsBtn(event)" src="./Resources/settings.png" onmouseover="this.src='./Resources/settings-hover.png';" onmouseout="this.src='./Resources/settings.png';">
             
             <div class="tabcontent" id="tabcontent_settings">
-                <h1>Settings</h1>
+                <h3>Settings</h3>
+                <hr>
+                <h4>General</h4>
+                <h5>Player Settings</h5>
+                <h5>Storage Settings</h5>
+                <h5>Accessibility Settings</h5>
+                <h5>Change Language</h5>
+                <hr>
+                <h4>Aesthetics</h4>
+                <h5>Change Theme</h5>
+                <hr>
+                <h4>Sound</h4>
+                <h5>Audio Settings</h5>
+                <h5>Equalizer</h5>
+                <hr>
+                <h4>Devices</h4>
+                <h5>Headphone Settings</h5>
+                <h5>Bluetooth Devices</h5>
+                <hr>
+                <h4>Miscellaneout</h4>
+                <h5>Sleep Aid</h5>
+                <h5>Security</h5>
+                <h5>Experimental Controls</h5>
+                <hr>
+                <h4>Other</h4>
+                <h5>About</h5>
+                <h5>Lisensing</h5>
+                <h5>Example Setting 1</h5>
+                <h5>Customer Support</h5>
             </div>
             
-            <input id="bar_search" onclick="openTab(event,'tabcontent_search')" type="text" placeholder="Search Song" maxlength="32">
+            <input id="bar_search" onclick="openTab(event,'tabcontent_search')" type="search" placeholder="Search All" maxlength="32">
             <div class="tabcontent" id="tabcontent_search">
-                <p>Put Search stuff here.</p>
+                
+                <h4>Search returned zero items.</h4>
+                <div class="item" id="item_sample1">
+                
+                </div>
             </div>
             
             <div class="tabs">
-                <button class="tablinks" id="tablink_library" onclick="openTab(event, 'tabcontent_library')">LIBRARY</button>
-                <button class="tablinks" id="tablink_playlist" onclick="openTab(event, 'tabcontent_playlist')">PLAYLIST</button>
-                <button class="tablinks" id="tablink_queue" onclick="openTab(event, 'tabcontent_queue')">QUEUE</button>
+                <button class="tablinks" id="tablink_library" onclick="clickLibraryTab(event)">LIBRARY</button>
+                <button class="tablinks" id="tablink_playlist" onclick="clickPlaylistTab(event)">PLAYLIST</button>
+                <button class="tablinks" id="tablink_queue" onclick="clickQueueTab(event)">QUEUE</button>
             </div>    
                 
             <div class="tabcontent" id="tabcontent_library">
-                <p>Put library stuff here.</p>
+                <div class="tabs" id="nestedtab">
+                    <button class="tablinks" id="tablink_library_song" onclick="clickSongTab(event)">Song</button>
+                    <button class="tablinks" id="tablink_library_artist" onclick="clickArtistTab(event)">Artist</button>
+                    <button class="tablinks" id="tablink_library_album" onclick="clickAlbumTab(event)">Album</button>
+                </div>
+                
+                
+                <div class="tabcontent" id="tabcontent_library_song">
+                    <p>This pages lists individual songs here.</p>
+                </div>
+                
+                <div class="tabcontent" id="tabcontent_library_artist">
+                    <p>This pages lists individual artists here.</p>
+                </div>
+                
+                <div class="tabcontent" id="tabcontent_library_album">
+                    <p>This pages lists individual albums here.</p>
+                </div>
+                
             </div>
             
             <div class="tabcontent" id="tabcontent_playlist">
-                <p>Put playlist stuff here.</p>
+                <h4>Pinned</h4>
+                <div class="item" id="item_sample1">
+                    <div style="vertical-align:top;">
+                    <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
+                    </div>
+                    
+                    <div style="position:relative; left:10px;">
+                        <div><h6>Morning Playlist</h6></div>
+                        <div><h6>(256 Songs)</h6></div>
+                    </div>
+                    
+                    <div style="position:relative; left:100px;">
+                    <input type="image" class='btn_fav' src="./Resources/heart-filled.png" onmouseover="this.src='./Resources/heart-hover.png';" onmouseout="this.src='./Resources/heart-filled.png';">
+                    </div>
+                </div>
+                <hr>
+                
+                
+                <div class="item">
+                    <div style="vertical-align:top;">
+                    <input type="image" class='albumart_mini' src="./Resources/Abbey-Road.jpg">
+                    </div>
+                    
+                    <div style="position:relative; left:10px;">
+                        <div><h6>Beatles Playlist</h6></div>
+                        <div><h6>(32 Songs)</h6></div>
+                    </div>
+                    
+                    <div style="position:relative; left:104px;">
+                    <input type="image" class='btn_fav' src="./Resources/heart-empty.png" onmouseover="this.src='./Resources/heart-hover.png';" onmouseout="this.src='./Resources/heart-empty.png';">
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="vertical-align:top;">
+                    <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                    </div>
+                    
+                    <div style="position:relative; left:10px;">
+                        <div><h6>Playlist of the Year</h6></div>
+                        <div><h6>(52 Songs)</h6></div>
+                    </div>
+                    
+                    <div style="position:relative; left:86px;">
+                    <input type="image" class='btn_fav' src="./Resources/heart-empty.png" onmouseover="this.src='./Resources/heart-hover.png';" onmouseout="this.src='./Resources/heart-empty.png';">
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="vertical-align:top;">
+                    <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
+                    </div>
+                    
+                    <div style="position:relative; left:10px;">
+                        <div><h6>Morning Playlist</h6></div>
+                        <div><h6>(256 Songs)</h6></div>
+                    </div>
+                    
+                    <div style="position:relative; left:100px;">
+                    <input type="image" class='btn_fav' src="./Resources/heart-filled.png" onmouseover="this.src='./Resources/heart-hover.png';" onmouseout="this.src='./Resources/heart-filled.png';">
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="vertical-align:top;">
+                    <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                    </div>
+                    
+                    <div style="position:relative; left:10px;">
+                        <div><h6>Evening Playlist</h6></div>
+                        <div><h6>(100 Songs)</h6></div>
+                    </div>
+                    
+                    <div style="position:relative; left:100px;">
+                    <input type="image" class='btn_fav' src="./Resources/heart-empty.png" onmouseover="this.src='./Resources/heart-hover.png';" onmouseout="this.src='./Resources/heart-empty.png';">
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="vertical-align:top;">
+                    <input type="image" class='albumart_mini' src="./Resources/Dark-Side-of-the-Moon.jpg">
+                    </div>
+                    
+                    <div style="position:relative; left:10px;">
+                        <div><h6>Litlist</h6></div>
+                        <div><h6>(420 Songs)</h6></div>
+                    </div>
+                    
+                    <div style="position:relative; left:123px;">
+                    <input type="image" class='btn_fav' src="./Resources/heart-empty.png" onmouseover="this.src='./Resources/heart-hover.png';" onmouseout="this.src='./Resources/heart-empty.png';">
+                    </div>
+                </div>
+                
+                <button class='btn' id="btn_new_playlist">NEW</button>
             </div>
             
             <div class="tabcontent" id="tabcontent_queue">
-                <p>Put queue stuff here.</p>
+                <div class="item">
+                    <div style="vertical-align:bottom;">
+                    <input type="image" class='albumart_mini' src="./Resources/Abbey-Road.jpg">
+                    </div>
+                    <div style="position:relative;">
+                        <h4>Here Comes The Sun</h4>
+                        <h6 style="font-variant: small-caps;padding-left: 24px;">The Beatles</h6>
+                    </div>
+                </div>
+                <hr>
+                <div class="item">
+                    <div style="vertical-align:bottom;">
+                    <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
+                    </div>
+                    <div style="position:relative;">
+                        <h4>Where Is My Mind</h4>
+                        <h6 style="font-variant: small-caps;padding-left: 24px;">The Pixies</h6>
+                    </div>
+                    
+                    <div style="position:relative; left:10px;vertical-align:bottom;">
+                    <input type="image" src="./Resources/arrows.png" style="width:50px;">
+                    </div>
+                </div>
+                <hr>
+                <div class="item">
+                    <div style="vertical-align:bottom;">
+                    <input type="image" class='albumart_mini' src="./Resources/Dark-Side-of-the-Moon.jpg">
+                    </div>
+                    <div style="position:relative;">
+                        <h4>Eclipse</h4>
+                        <h6 style="font-variant: small-caps;padding-left: 24px;">Pink Floyd</h6>
+                    </div>
+                </div>
+                <hr>
+                <div class="item">
+                    <div style="vertical-align:bottom;">
+                    <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                    </div>
+                    <div style="position:relative;">
+                        <h4>Untitled1</h4>
+                        <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
+                    </div>
+                </div>
+                <hr>
+                <div class="item">
+                    <div style="vertical-align:bottom;">
+                    <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                    </div>
+                    <div style="position:relative;">
+                        <h4>Untitled1</h4>
+                        <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
+                    </div>
+                </div>
+                <hr>
+                <div class="item">
+                    <div style="vertical-align:bottom;">
+                    <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                    </div>
+                    <div style="position:relative;">
+                        <h4>Untitled1</h4>
+                        <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
+                    </div>
+                </div>
+                <hr>
+                <div class="item">
+                    <div style="vertical-align:bottom;">
+                    <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                    </div>
+                    <div style="position:relative;">
+                        <h4>Untitled1</h4>
+                        <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="section_mid" style="height:468px;">
-            <h2 id="text_artist">Pixies - </h2>
-            <h1 id="text_songtitle">Where Is My Mind</h1><br>
-            
-            <input type="image" class='btn' id="btn_repeat" src="https://wattsupwiththat.files.wordpress.com/2012/03/repeating_icon.png" width="36" />
-            <input type="image" class='btn' id="btn_shuffle" src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/media-shuffle.png" width="36" />
-            <input type="image" class='btn' id="btn_play" src="https://images-na.ssl-images-amazon.com/images/I/31CWpfvSQOL.png" width="120" onclick="togglePlayPauseButton();"/>
-        </div>
-        <img id="bar_nav" src="./Resources/navbar.png" alt="navBar" width="360">
-        <button class='btn' id="btn_back" onclick="returnToPlayer(event)"></button>
         
+        <div id="section_mid">
+            <div id="subsection_title">
+                <h1 id="text_songtitle">Where Is My Mind</h1>
+                <h2 id="text_artist">The Pixies</h2>
+                <h2 id="text_time">01:23</h2>
+            </div>
+            <input type="image" class='btn' id="btn_repeat"  onclick="clickRepeatBtn(event)" src="./Resources/repeat-off.png" onmouseover="this.src='./Resources/repeat-hover.png';" onmouseout="hoverRepeatBtn(event)">
+            <input type="image" class='btn' id="btn_shuffle" onclick="clickShuffleBtn(event)" src="./Resources/shuffle-off.png" onmouseover="this.src='./Resources/shuffle-hover.png';" onmouseout="hoverShuffleBtn(event)">
+            <input type="image" class='btn' id="btn_play" onclick="clickPlayPauseBtn(event)" src="./Resources/play.png" onmouseover="this.src='./Resources/play-hover.png';" onmouseout="this.src='./Resources/play.png';">
+            <input type="image" class='btn' id="btn_pause" onclick="clickPlayPauseBtn(event)" src="./Resources/pause.png" onmouseover="this.src='./Resources/pause-hover.png';" onmouseout="this.src='./Resources/pause.png';">
+            
+            <input type="image" class='albumart' id="albumart_center" src="./Resources/Where-Is-My-Mind.jpg">
+            <input type="image" class='albumart' id="albumart_left" src="./Resources/Abbey-Road.jpg">
+            <input type="image" class='albumart' id="albumart_right" src="./Resources/Dark-Side-of-the-Moon.jpg">
+        </div>
+        
+        <img id="bar_nav" src="./Resources/navbar.png" alt="navBar">
+        <button class='btn' id="btn_back" onclick="closeTab(event)"></button>
+        <button class='btn' id="btn_info" onclick="openInfo(event)">i</button>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

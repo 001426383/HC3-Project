@@ -1,5 +1,6 @@
 #app {
     position:relative;
+    overflow: hidden;
 }
 #app > * {
     position:absolute;
@@ -11,19 +12,28 @@
     top:0px;
     left:0px;
     width: 360px;
-    height: 300px;
+    height: 126px;
+    z-index: 2;
 }
 
 #section_mid {
-    top:0px;
+    top:127px;
     left:0px;
     width: 360px;
-    z-index: -1;
+    z-index: 1;
 }
 
+#subsection_title{
+    width: 360px;
+    height: 70px;
+    background-color: #003399;
+    border-bottom: 1px solid black;
+}
 
 #bar_nav {
     bottom:0px;
+    width:360px;
+    z-index: 5;
 }
 
 #bar_search{
@@ -33,6 +43,8 @@
     left: 80px;
     box-sizing: border-box;
     border-radius: 12px;
+    border: 2px hidden;
+    outline: 0 none;
     font-size: 14px;
     background-color: #ffe6ee;
     background-image: url('http://www.2588588.com/images/icons/search.png');
@@ -40,7 +52,6 @@
     background-position: 6px 6px; 
     background-repeat: no-repeat;
     padding: 10px 10px 10px 46px;
-    
 }
 #bar_search:focus{
     
@@ -60,13 +71,13 @@ div.tabs {
 
 
 div.tabs button {
+    font-size: 16px;
     background-color: inherit;
+    font-variant: small-caps;
     float: left;
     width: 33.33%;
     width: calc(100%  /3);
     border: 1px solid #000;
-    
-    border-bottom: none;
     border-top-width: 2px;
     outline: none;
     cursor: pointer;
@@ -75,12 +86,7 @@ div.tabs button {
     color:#FFCC33;
 }
 
-div.tabs button:active, div.tabs button:hover {
-    background-color: #FFCC33;
-    color:#990033;
-}
-
-div.tabs button:focus{
+div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
     background-color: #FFCC33;
     color:#990033;
 }
@@ -93,10 +99,29 @@ div.tabs button:focus{
     border-right:none;
 }
 
+#nestedtab{
+    top:0px;
+    left:0px;
+    width:inherit;
+    overflow: hidden;
+    border: 1px solid inherit;
+    background-color: inherit;
+}
+
+#nestedtab button{
+    border-left-style: dotted;
+    border-right-style: dotted;
+}
+
+
+#tablink_library_song{
+    border-top-style: dotted;
+}
+
 .tabcontent {
     position:absolute;
     background-color: #666;
-    top: 125px;
+    top: 126px;
     width: 360px;
     height: 300px;;
     
@@ -104,24 +129,46 @@ div.tabs button:focus{
     display: none;
     padding: 6px 12px;
     border: 1px solid #000;
+    border-top: none;
     border-left: none;
     border-right: none;
+    
+    overflow-y: auto;
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
 
 #tabcontent_settings{
     background-color: #990033;
-    top: 0px;
+    top:80px;
     width: 360px;
-    height: 598px;;
+    height: 518px;
+    border: 2px solid #000;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
     z-index: 1;
     box-sizing: border-box;
     display: none;
     padding: 6px 12px;
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
-    
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #555; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333; 
 }
 
 @-webkit-keyframes fadeEffect {
@@ -134,29 +181,63 @@ div.tabs button:focus{
     to {opacity: 1;}
 }
 
+@-webkit-keyframes slideDown {
+    from {top: -1000;}
+    to {top: 80;}
+}
+
+@keyframes slideDown {
+    from {top: -1000;}
+    to {top: 80;}
+}
+
 .btn{
     position:absolute;
+    outline: 0 none;
 }
 
 #btn_settings{
+    border-radius: 12px;
+    border: 2px solid #000;
+    width:36px;
     left: 20px;
     top: 20px;
 }
 
+
+#btn_settings:active, #btn_settings:hover, button:focus{
+    background-color: #FFCC33;
+}
+
 #btn_repeat{
-    top: 550px;
+    top: 424px;
     left: 50px;
+    width: 36px;
+    z-index: 2;
 }
 
 #btn_shuffle{
-    top: 550px;
+    top: 424px;
     left: 274px;
+    width: 36px;
+    z-index: 2;
 }
 
 #btn_play{
-    top: 500px;
+    top: 374px;
     left: 120px;
+    width: 120px;
+    z-index: 2;
 }
+
+#btn_pause{
+    display: none;
+    top: 374px;
+    left: 120px;
+    width: 120px;
+    z-index: 2;
+}
+
 
 #btn_back{
     top: 600px;
@@ -166,6 +247,7 @@ div.tabs button:focus{
     background: transparent;
     border: none !important;
     font-size:0;
+    z-index: 6;
 }
 
 #btn_back:active{
@@ -173,18 +255,166 @@ div.tabs button:focus{
     transition: 0.3s;
 }
 
-h1, h2, h3{
+#btn_info{
+    top: 205px;
+    left: 260px;
+    font-size:32px;
+    width:auto;
+    height:auto;
+    background: #FFF;
+    color: #FFCC33;
+    border-radius: 32px;
+    border: 3px solid #FFF;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    transform: rotate(10deg);
+    text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    z-index: 1;
+}
+
+#btn_info:hover{
+    background: #FFCC33;
+    color: #EEE;
+}
+
+.btn_fav{
+    width:32px;
+}
+
+#btn_new_playlist{
+    position:sticky;
+    background: #CCC;
+    top:0px;
+    left:270px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    height:34px;
+}
+
+#btn_new_playlist:hover{
+    background: #FFCC33;
+}
+
+div.item > *{
+    display:inline-block;
+}
+
+.albumart{
+    position:absolute;
+    outline: 0 none;
+    border: 1px solid #FFF;
+    border-radius: 2px;
+}
+
+#albumart_center{
+    top: 84px;
+    left: 80px;
+    width: 200px;
+    height: auto;
+    z-index: 1;
+    opacity: 1;
+}
+
+#albumart_left{
+    top: 114px;
+    left: 0px;
+    width: 160px;
+    height: auto;
+    transform: rotate(-16deg);
+    opacity: 0.6;
+}
+
+#albumart_right{
+    top: 114px;
+    left: 200px;
+    width: 160px;
+    height: auto;
+    transform: rotate(16deg);
+    opacity: 0.6;
+}
+
+.albumart_mini{
+    
+    position:sticky;
+    outline: 0 none;
+    border: 1px solid #FFF;
+    border-radius: 2px;
+    width: 50px;
+    
+    
+}
+h1, h2{
     font-family: Tahoma, Geneva, sans-serif;
+    font-variant: small-caps;
+    font-size: 18px;
+    color: #EEE;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1{
+    font-weight: bold;
+    font-size:32px;
+}
+
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-size:24px;
     text-align: center;
+    font-variant: small-caps;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-size:18px;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-size:14px;
+    color: #FFCC33;
+    text-align: left;
+    padding-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h6{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+hr{
+    border: 1px solid #333;
+    background: #333;
 }
 
 #text_songtitle{
     position:absolute;
-    top:140px;
+    top:-6px;
     left:10px;
 }
 #text_artist{
     position:absolute;
-    top:120px;
+    top:29px;
     left:10px;
+    opacity: 0.5;
+}
+#text_time{
+    position:absolute;
+    top:28px;
+    right:10px;
+    opacity: 0.25;
 }
