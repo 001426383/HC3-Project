@@ -135,9 +135,8 @@ div.tabs button:hover{
     border-right: none;
     
     overflow-y: auto;
-    
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    -webkit-animation: slideDown 1s;
+    animation: slideDown 1s;
 }
 
 #tabcontent_settings{
@@ -153,8 +152,8 @@ div.tabs button:hover{
     box-sizing: border-box;
     display: none;
     padding: 6px 12px;
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    -webkit-animation: slideSettings 1s;
+    animation: slideSettings 1s;
 }
 
 #tabcontent_library{
@@ -167,6 +166,9 @@ div.tabs button:hover{
     top:50px;
     left:0px;
     overflow-y: auto;
+    
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
 }
 
 #tabcontent_library_artist{
@@ -174,6 +176,8 @@ div.tabs button:hover{
     top:50px;
     left:0px;
     overflow-y: auto;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
 }
 
 #tabcontent_library_album{
@@ -181,6 +185,8 @@ div.tabs button:hover{
     top:50px;
     left:0px;
     overflow-y: auto;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
 }
 
 ::-webkit-scrollbar {
@@ -201,7 +207,7 @@ div.tabs button:hover{
 
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
-    to {opacity: 1;}
+    to {opacity:  1;}
 }
 
 @keyframes fadeEffect {
@@ -209,28 +215,60 @@ div.tabs button:hover{
     to {opacity: 1;}
 }
 
+@-webkit-keyframes fadeDropbox {
+    from {opacity: 0;}
+    to {opacity:  0.5;}
+}
+
+@keyframes fadeDropbox {
+    from {opacity: 0;}
+    to {opacity: 0.5;}
+}
+
 @-webkit-keyframes slideDown {
-    from {top: -1000;}
-    to {top: 80;}
+    from {height: 0px;}
+    to {height: 300px;}
 }
 
 @keyframes slideDown {
-    from {top: -1000;}
-    to {top: 80;}
+    from {height: 0px;}
+    to {height: 300px;}
+}
+
+@-webkit-keyframes slideLeft {
+    from {left: -360px;}
+    to {left: 0px;}
+}
+
+@keyframes slideLeft {
+    from {left: -360px;}
+    to {left: 0px;}
+}
+
+@-webkit-keyframes slideSettings {
+    from {height: 0px;}
+    to {height: 518px;}
+}
+
+@keyframes slideSettings {
+    from {height: 0px;}
+    to {height: 518px;}
 }
 
 #dropbox{
     position: absolute;
     width:360px;
-    height:169px;
-    top:302px;
+    height:471px;
+    top:0px;
     left:0px;
     
-    z-index: 4;
+    z-index: 6;
     border: none;
     background-color: #555;
     opacity: 0.5;
     display: none;
+    -webkit-animation: fadeDropbox 1s;
+    animation: fadeDropbox 1s;
 }
 
 #dropbox:hover{
