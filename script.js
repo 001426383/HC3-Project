@@ -22,6 +22,8 @@ function openTab(evt, tabName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+    
+    document.getElementById('dropbox').style.display = "inline";
 }
 
 function openNestedTab(evt, parent, tabName) {
@@ -44,6 +46,8 @@ function openNestedTab(evt, parent, tabName) {
     document.getElementById(parent).style.display = "block";
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+    
+    document.getElementById('dropbox').style.display = "inline";
 }
 
 
@@ -64,6 +68,9 @@ function closeTab(evt){
     }
     document.getElementById('bar_search').value = "";
     document.getElementById('bar_search').placeholder = "Search All";
+    
+    
+    document.getElementById('dropbox').style.display = "none";
 }
 
 
@@ -196,8 +203,13 @@ function switchSongTitle(evt){
     
 }
 
-function swipeAlbum(evt){
-    
-    
-    
+function swipeAlbum(evt, dir){
+    if (dir == 0)//Left
+        previousInQueue();
+    else //Right
+        nextInQueue();
+}
+
+function dropboxAction(evt){
+    closeTab(evt);
 }

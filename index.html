@@ -42,7 +42,7 @@
                 <h4>Miscellaneout</h4>
                 <h5>Sleep Aid</h5>
                 <h5>Security</h5>
-                <h5>Experimental Controls</h5>
+                <h5>Experimental Features</h5>
                 <hr>
                 <h4>Other</h4>
                 <h5>About</h5>
@@ -74,21 +74,24 @@
                 
                 
                 <div class="tabcontent" id="tabcontent_library_song">
-                    <p>This pages lists individual songs here.</p>
+                    <p>This pages lists individual songs.</p>
                 </div>
                 
                 <div class="tabcontent" id="tabcontent_library_artist">
-                    <p>This pages lists individual artists here.</p>
+                    <p>This pages lists individual artists.</p>
                 </div>
                 
                 <div class="tabcontent" id="tabcontent_library_album">
-                    <p>This pages lists individual albums here.</p>
+                    <p>This pages lists individual albums.</p>
                 </div>
                 
             </div>
             
             <div class="tabcontent" id="tabcontent_playlist">
-                <h4>Pinned</h4>
+                <div class="item">
+                    <h4>Pinned</h4>
+                    <button class='btn' id="btn_new_playlist">NEW</button>
+                </div>
                 <div class="item" id="item_sample1">
                     <div style="vertical-align:top;">
                     <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
@@ -168,7 +171,7 @@
                     </div>
                     
                     <div style="position:relative; left:10px;">
-                        <div><h6>Litlist</h6></div>
+                        <div><h6>Mix-Tape</h6></div>
                         <div><h6>(420 Songs)</h6></div>
                     </div>
                     
@@ -176,8 +179,6 @@
                     <input type="image" class='btn_fav' src="./Resources/heart-empty.png" onmouseover="this.src='./Resources/heart-hover.png';" onmouseout="this.src='./Resources/heart-empty.png';">
                     </div>
                 </div>
-                
-                <button class='btn' id="btn_new_playlist">NEW</button>
             </div>
             
             <div class="tabcontent" id="tabcontent_queue">
@@ -263,7 +264,7 @@
                 <h2 id="text_artist">The Pixies</h2>
                 <h2 id="text_time">01:23</h2>
             </div>
-            <input type="image" class='btn' id="btn_repeat"  onclick="clickRepeatBtn(event)" src="./Resources/repeat-off.png" onmouseover="this.src='./Resources/repeat-hover.png';" onmouseout="hoverRepeatBtn(event)" draggable="false">
+            <input type="image" class='btn' id="btn_repeat" onclick="clickRepeatBtn(event)" src="./Resources/repeat-off.png" onmouseover="this.src='./Resources/repeat-hover.png';" onmouseout="hoverRepeatBtn(event)" draggable="false">
             <input type="image" class='btn' id="btn_shuffle" onclick="clickShuffleBtn(event)" src="./Resources/shuffle-off.png" onmouseover="this.src='./Resources/shuffle-hover.png';" onmouseout="hoverShuffleBtn(event)" draggable="false">
             <input type="image" class='btn' id="btn_play" onclick="clickPlayPauseBtn(event)" src="./Resources/play.png" onmouseover="this.src='./Resources/play-hover.png';" onmouseout="this.src='./Resources/play.png';" draggable="false">
             <input type="image" class='btn' id="btn_pause" onclick="clickPlayPauseBtn(event)" src="./Resources/pause.png" onmouseover="this.src='./Resources/pause-hover.png';" onmouseout="this.src='./Resources/pause.png';" draggable="false">
@@ -276,11 +277,17 @@
             
             <input type="image" id="bar_seek" src="./Resources/seekbar.png" draggable="false">
             <input type="image" id="btn_seek" src="./Resources/seekbar-button-passive.png" onmouseover="this.src='./Resources/seekbar-button-active.png';" onmouseout="this.src='./Resources/seekbar-button-passive.png';" draggable="false">
-            
+            <p class="time" id="time_minimum">00:00</p>
+            <p class="time" id="time_maximum">03:51</p>
             
             <input type="image" class='albumart' id="albumart_center" src="./Resources/Where-Is-My-Mind.jpg" draggable="false">
             <input type="image" class='albumart' id="albumart_left" src="./Resources/Abbey-Road.jpg" draggable="false">
             <input type="image" class='albumart' id="albumart_right" src="./Resources/Dark-Side-of-the-Moon.jpg" draggable="false">
+            <input type="image" class='albumart' id="albumart_leftleft" src="./Resources/album-stock.png" draggable="false">
+            <input type="image" class='albumart' id="albumart_rightright" src="./Resources/album-stock.png" draggable="false">
+
+            
+            <button id="dropbox" onclick="dropboxAction(event)"></button>
         </div>
         
         <img id="bar_nav" src="./Resources/navbar.png" alt="navBar">

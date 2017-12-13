@@ -12,7 +12,7 @@
     top:0px;
     left:0px;
     width: 360px;
-    height: 126px;
+    height: 129px;
     z-index: 2;
 }
 
@@ -56,6 +56,7 @@
 #bar_search:focus{
     
 }
+
 input::placeholder{
     font-style: italic;
 }
@@ -121,7 +122,7 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
 .tabcontent {
     position:absolute;
     background-color: #666;
-    top: 126px;
+    top: 129px;
     width: 360px;
     height: 300px;
     
@@ -154,6 +155,32 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
     padding: 6px 12px;
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+#tabcontent_library{
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+#tabcontent_library_song{
+    height: 250px;
+    top:50px;
+    left:0px;
+    overflow-y: auto;
+}
+
+#tabcontent_library_artist{
+    height: 250px;
+    top:50px;
+    left:0px;
+    overflow-y: auto;
+}
+
+#tabcontent_library_album{
+    height: 250px;
+    top:50px;
+    left:0px;
+    overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
@@ -190,6 +217,24 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
 @keyframes slideDown {
     from {top: -1000;}
     to {top: 80;}
+}
+
+#dropbox{
+    position: absolute;
+    width:360px;
+    height:169px;
+    top:302px;
+    left:0px;
+    
+    z-index: 4;
+    border: none;
+    background-color: #555;
+    opacity: 0.5;
+    display: none;
+}
+
+#dropbox:hover{
+    background-color: #999;
 }
 
 .btn{
@@ -321,7 +366,7 @@ div.item > *{
     width: 160px;
     height: auto;
     transform: rotate(-16deg);
-    opacity: 0.6;
+    opacity: 0.65;
 }
 
 #albumart_right{
@@ -330,7 +375,29 @@ div.item > *{
     width: 160px;
     height: auto;
     transform: rotate(16deg);
-    opacity: 0.6;
+    opacity: 0.65;
+}
+
+#albumart_leftleft{
+    display:none;
+    top: 184px;
+    left: -40px;
+    width: 120px;
+    height: auto;
+    transform: rotate(-24deg);
+    opacity: 1;
+    z-index: -1;
+}
+
+#albumart_rightright{
+    display:none;
+    top: 184px;
+    left: 286px;
+    width: 120px;
+    height: auto;
+    transform: rotate(24deg);
+    opacity: 1;
+    z-index: -1;
 }
 
 .albumart_mini{
@@ -484,4 +551,32 @@ hr{
     top:28px;
     right:10px;
     opacity: 0.25;
+}
+
+.time{
+    position:absolute;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size:10px;
+    font-weight: bold;
+    border: 1px solid #FFF;
+    border-radius:4px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #FFF;
+}
+#time_minimum{
+    top:314px;
+    left:2px;
+    transform: rotate(-20deg);
+    z-index: 1;
+    
+    
+}
+#time_maximum{
+    top:314px;
+    right:2px;
+    transform: rotate(20deg);
+    z-index: 1;
+    
+    
 }
