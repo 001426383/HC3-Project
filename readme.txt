@@ -14,8 +14,6 @@ NON-Functioning Features: (Features that are either not working or not implement
 	- Assume, sliding the button will move it left or right within the bounded area.
  - Swiping gesture not implemented.
 	- Assume, swiping (left/right) on the album art will also change the current track.
- - The 'i' (song information) button is not implemented.
-	- Assume, pressing the 'i' button will output a screen displaying information about currently playing song.
  - The items in the tabs are hard-coded in.
 	- As such, Drag-and-Drop (dragging an item to the bottom half) will not add the current item to the queue.
 		- Assume, items can be picked up and dropped into the bottom area. Bottom area will change color when this happens.

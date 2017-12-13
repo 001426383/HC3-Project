@@ -408,11 +408,19 @@
             <input type="image" class='albumart' id="albumart_rightright" src="./Resources/album-stock.png" draggable="false">
             
             <button id="dropbox" onclick="dropboxAction(event)"></button>
+            
+            <div class="notification" id="notification_small">
+                <p id="text_note"></p>
+            </div>
+            <button class='btn' id="btn_info" onclick="toggleInfo(event)">i</button>
+            <div class="notification" id="notification_info" onclick="toggleInfo(event)">
+                <p id="text_info">Song Info Goes Here.</p>
+            </div>
+            
         </div>
         
         <img id="bar_nav" src="./Resources/navbar.png" alt="navBar">
         <button class='btn' id="btn_back" onclick="closeTab(event)"></button>
-        <button class='btn' id="btn_info" onclick="openInfo(event)">i</button>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

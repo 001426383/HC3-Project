@@ -151,10 +151,14 @@ function clickPlayPauseBtn(evt){
 
 function clickShuffleBtn(evt){
     IsShuffling = !IsShuffling;
-    if (IsShuffling)
+    if (IsShuffling){
         document.getElementById('btn_shuffle').src = "./Resources/shuffle-on.png";
-    else
+        displayNotification(evt, "Shuffle ON");
+    }
+    else{
         document.getElementById('btn_shuffle').src = "./Resources/shuffle-off.png";
+        displayNotification(evt, "Shuffle OFF");
+    }
 }
 
 function hoverShuffleBtn(evt){
@@ -167,10 +171,14 @@ function hoverShuffleBtn(evt){
 
 function clickRepeatBtn(evt){
     IsRepeating = !IsRepeating;
-    if (IsRepeating)
+    if (IsRepeating){
         document.getElementById('btn_repeat').src = "./Resources/repeat-on.png";
-    else
+        displayNotification(evt, "Repeat ON");
+    }
+    else{
         document.getElementById('btn_repeat').src = "./Resources/repeat-off.png";
+        displayNotification(evt, "Repeat OFF");
+    }
 }
 
 function hoverRepeatBtn(evt){
@@ -244,4 +252,23 @@ function swipeAlbum(evt, dir){
 
 function dropboxAction(evt){
     closeTab(evt);
+}
+
+
+function toggleInfo(evt){
+    var info = document.getElementById('notification_info');
+    if (info.style.display === "inline")
+        document.getElementById('notification_info').style.display = "none";
+    else
+        document.getElementById('notification_info').style.display = "inline";
+}
+
+function displayNotification(evt, text){
+    document.getElementById('notification_small').style.display = "inline";
+    document.getElementById('text_note').innerHTML = text;
+    setTimeout(closeNotification, 2000, evt);
+}
+
+function closeNotification(evt){
+    document.getElementById('notification_small').style.display = "none";
 }

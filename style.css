@@ -343,7 +343,7 @@ div.tabs button:hover{
 }
 
 #btn_info{
-    top: 205px;
+    top: 75px;
     left: 260px;
     font-size:32px;
     width:auto;
@@ -515,6 +515,35 @@ div.item > *{
     transform: rotate(10deg);
 }
 
+.notification{
+    display:none;
+    position:absolute;
+    background-color: #003399;
+    top: 200px;
+    left: 0px;
+    
+    z-index: 1;
+    -webkit-animation: slideLeft 1s;
+    animation: slideLeft 1s;
+}
+
+
+#notification_info{
+    top: 100px;
+    left: 0px;
+    width: 40%;
+    height: 150px;
+}
+
+#notification_info:hover{
+    background-color: #FFCC33;
+}
+
+#notification_small{
+    left: 0px;
+    width: auto;
+    height: 30px;
+}
 
 h1, h2{
     font-family: Tahoma, Geneva, sans-serif;
@@ -592,7 +621,28 @@ hr{
     right:10px;
     opacity: 0.25;
 }
-
+#text_info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-size: 16px;
+    color: #EEE;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    opacity: 0.75;
+}
+#text_note{
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-size: 12px;
+    color: #EEE;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    opacity: 0.75;
+}
 .time{
     position:absolute;
     font-family: Tahoma, Geneva, sans-serif;
@@ -617,6 +667,4 @@ hr{
     right:2px;
     transform: rotate(20deg);
     z-index: 1;
-    
-    
 }
