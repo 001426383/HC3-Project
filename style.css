@@ -362,7 +362,7 @@ div.item > *{
     
 }
 
-.slider{
+#slider{
     position:absolute;
     outline: 0 none;
     top: 310px;
@@ -370,6 +370,44 @@ div.item > *{
     width: 360px;
     height: auto;
 }
+
+#btn_slider{
+    position:absolute;
+    outline: 0 none;
+    top: 310px;
+    left: 124px;
+    width: auto;
+    height: 70px;
+    z-index: 4;
+    
+}
+
+.btn_trackswitch{
+    position:absolute;
+    width:169px;
+    height:76px;
+    background: transparent;
+    border: none !important;
+    outline: 0 none;
+    font-size:0;
+    z-index: 3;
+}
+
+.btn_trackswitch:focus{
+    background: transparent;
+}
+#btn_trackswitch_previous{
+    top: 321px;
+    left: -10px;
+    transform: rotate(-10deg);
+}
+
+#btn_trackswitch_next{
+    top: 321px;
+    left: 202px;
+    transform: rotate(10deg);
+}
+
 
 h1, h2{
     font-family: Tahoma, Geneva, sans-serif;

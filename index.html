@@ -268,10 +268,15 @@
             <input type="image" class='btn' id="btn_play" onclick="clickPlayPauseBtn(event)" src="./Resources/play.png" onmouseover="this.src='./Resources/play-hover.png';" onmouseout="this.src='./Resources/play.png';" draggable="false">
             <input type="image" class='btn' id="btn_pause" onclick="clickPlayPauseBtn(event)" src="./Resources/pause.png" onmouseover="this.src='./Resources/pause-hover.png';" onmouseout="this.src='./Resources/pause.png';" draggable="false">
             
-            <input type="image" class='slider' id="slider_default" src="./Resources/slider-default.png" draggable="false">
+            <input type="image" id='slider' src="./Resources/slider-default.png" draggable="false">
+            <input type="image" id="btn_slider" src="./Resources/slider-button-passive.png" onmouseover="this.src='./Resources/slider-button-active.png';" onmouseout="this.src='./Resources/slider-button-passive.png';" draggable="false">
+            
+            <button class='btn_trackswitch' id="btn_trackswitch_previous" onclick="previousInQueue(event)" onmouseover="document.getElementById('slider').src='./Resources/slider-left-hover.png';" onmouseout="document.getElementById('slider').src='./Resources/slider-default.png';" ></button>
+            <button class='btn_trackswitch' id="btn_trackswitch_next" onclick="nextInQueue(event)" onmouseover="document.getElementById('slider').src='./Resources/slider-right-hover.png';" onmouseout="document.getElementById('slider').src='./Resources/slider-default.png';" ></button>
             
             <input type="image" id="bar_seek" src="./Resources/seekbar.png" draggable="false">
             <input type="image" id="btn_seek" src="./Resources/seekbar-button-passive.png" onmouseover="this.src='./Resources/seekbar-button-active.png';" onmouseout="this.src='./Resources/seekbar-button-passive.png';" draggable="false">
+            
             
             <input type="image" class='albumart' id="albumart_center" src="./Resources/Where-Is-My-Mind.jpg" draggable="false">
             <input type="image" class='albumart' id="albumart_left" src="./Resources/Abbey-Road.jpg" draggable="false">

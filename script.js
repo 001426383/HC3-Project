@@ -120,7 +120,6 @@ function clickShuffleBtn(evt){
         document.getElementById('btn_shuffle').src = "./Resources/shuffle-on.png";
     else
         document.getElementById('btn_shuffle').src = "./Resources/shuffle-off.png";
-    nextInQueue(evt);
 }
 
 function hoverShuffleBtn(evt){
@@ -137,7 +136,6 @@ function clickRepeatBtn(evt){
         document.getElementById('btn_repeat').src = "./Resources/repeat-on.png";
     else
         document.getElementById('btn_repeat').src = "./Resources/repeat-off.png";
-    previousInQueue(evt);
 }
 
 function hoverRepeatBtn(evt){
