@@ -123,7 +123,7 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
     background-color: #666;
     top: 126px;
     width: 360px;
-    height: 300px;;
+    height: 300px;
     
     box-sizing: border-box;
     display: none;
@@ -134,6 +134,7 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
     border-right: none;
     
     overflow-y: auto;
+    
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
@@ -224,17 +225,17 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
 }
 
 #btn_play{
-    top: 374px;
-    left: 120px;
-    width: 120px;
+    top: 378px;
+    left: 125px;
+    width: 110px;
     z-index: 2;
 }
 
 #btn_pause{
     display: none;
-    top: 374px;
-    left: 120px;
-    width: 120px;
+    top: 378px;
+    left: 125px;
+    width: 110px;
     z-index: 2;
 }
 
@@ -302,7 +303,7 @@ div.item > *{
     position:absolute;
     outline: 0 none;
     border: 1px solid #FFF;
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
 #albumart_center{
@@ -315,7 +316,7 @@ div.item > *{
 }
 
 #albumart_left{
-    top: 114px;
+    top: 129px;
     left: 0px;
     width: 160px;
     height: auto;
@@ -324,7 +325,7 @@ div.item > *{
 }
 
 #albumart_right{
-    top: 114px;
+    top: 129px;
     left: 200px;
     width: 160px;
     height: auto;
@@ -333,15 +334,43 @@ div.item > *{
 }
 
 .albumart_mini{
-    
     position:sticky;
     outline: 0 none;
     border: 1px solid #FFF;
     border-radius: 2px;
     width: 50px;
-    
+}
+
+#bar_seek{
+    position:absolute;
+    outline: 0 none;
+    top: 280px;
+    left: 0px;
+    width: 360px;
+    height: auto;
+    z-index: 2;
+}
+
+#btn_seek{
+    position:absolute;
+    outline: 0 none;
+    top: 278px;
+    left: 112px;
+    width: 20px;
+    height: auto;
+    z-index: 2;
     
 }
+
+.slider{
+    position:absolute;
+    outline: 0 none;
+    top: 310px;
+    left: 0px;
+    width: 360px;
+    height: auto;
+}
+
 h1, h2{
     font-family: Tahoma, Geneva, sans-serif;
     font-variant: small-caps;

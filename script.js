@@ -120,6 +120,7 @@ function clickShuffleBtn(evt){
         document.getElementById('btn_shuffle').src = "./Resources/shuffle-on.png";
     else
         document.getElementById('btn_shuffle').src = "./Resources/shuffle-off.png";
+    nextInQueue(evt);
 }
 
 function hoverShuffleBtn(evt){
@@ -136,6 +137,7 @@ function clickRepeatBtn(evt){
         document.getElementById('btn_repeat').src = "./Resources/repeat-on.png";
     else
         document.getElementById('btn_repeat').src = "./Resources/repeat-off.png";
+    previousInQueue(evt);
 }
 
 function hoverRepeatBtn(evt){
@@ -145,3 +147,59 @@ function hoverRepeatBtn(evt){
         document.getElementById('btn_repeat').src = "./Resources/repeat-off.png";
 }
 
+function nextInQueue(evt){
+    var center = document.getElementById('albumart_center');
+    var left = document.getElementById('albumart_left');
+    var right = document.getElementById('albumart_right');
+    
+    var temp = document.getElementById('albumart_center').src;
+    
+    center.src = right.src;
+    right.src = left.src;
+    left.src = temp;
+    switchSongTitle(evt);
+}
+
+function previousInQueue(evt){
+    var center = document.getElementById('albumart_center');
+    var left = document.getElementById('albumart_left');
+    var right = document.getElementById('albumart_right');
+    
+    var temp = document.getElementById('albumart_center').src;
+    
+    center.src = left.src;
+    left.src = right.src;
+    right.src = temp;
+    
+    switchSongTitle(evt);
+}
+
+function switchSongTitle(evt){
+    var center = document.getElementById('albumart_center');
+    var filename = center.src.split(/(\\|\/)/g).pop();
+    
+    if (filename === "Abbey-Road.jpg"){
+        document.getElementById('text_songtitle').innerHTML = "Here Comes The Sun";
+        document.getElementById('text_artist').innerHTML = "The Beatles";
+    }
+    else if (filename === "Where-Is-My-Mind.jpg"){
+        document.getElementById('text_songtitle').innerHTML = "Where Is My Mind";
+        document.getElementById('text_artist').innerHTML = "The Pixies";
+    }
+    else if (filename === "Dark-Side-of-the-Moon.jpg"){
+        document.getElementById('text_songtitle').innerHTML = "Eclipse";
+        document.getElementById('text_artist').innerHTML = "Pink Floyd";
+    }
+    else{
+        document.getElementById('text_songtitle').innerHTML = "Untitled";
+        document.getElementById('text_artist').innerHTML = "Unknown Artist";
+    }
+    document.getElementById('text_time').innerHTML = "00:00";
+    
+}
+
+function swipeAlbum(evt){
+    
+    
+    
+}

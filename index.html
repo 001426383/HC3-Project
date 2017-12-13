@@ -47,7 +47,6 @@
                 <h4>Other</h4>
                 <h5>About</h5>
                 <h5>Lisensing</h5>
-                <h5>Example Setting 1</h5>
                 <h5>Customer Support</h5>
             </div>
             
@@ -192,7 +191,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="item">
+                <div class="item" style="background-color: ">
                     <div style="vertical-align:bottom;">
                     <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
                     </div>
@@ -231,7 +230,7 @@
                     <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
                     </div>
                     <div style="position:relative;">
-                        <h4>Untitled1</h4>
+                        <h4>Untitled2</h4>
                         <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
                     </div>
                 </div>
@@ -241,7 +240,7 @@
                     <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
                     </div>
                     <div style="position:relative;">
-                        <h4>Untitled1</h4>
+                        <h4>Untitled3</h4>
                         <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
                     </div>
                 </div>
@@ -251,7 +250,7 @@
                     <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
                     </div>
                     <div style="position:relative;">
-                        <h4>Untitled1</h4>
+                        <h4>Untitled4</h4>
                         <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
                     </div>
                 </div>
@@ -264,14 +263,19 @@
                 <h2 id="text_artist">The Pixies</h2>
                 <h2 id="text_time">01:23</h2>
             </div>
-            <input type="image" class='btn' id="btn_repeat"  onclick="clickRepeatBtn(event)" src="./Resources/repeat-off.png" onmouseover="this.src='./Resources/repeat-hover.png';" onmouseout="hoverRepeatBtn(event)">
-            <input type="image" class='btn' id="btn_shuffle" onclick="clickShuffleBtn(event)" src="./Resources/shuffle-off.png" onmouseover="this.src='./Resources/shuffle-hover.png';" onmouseout="hoverShuffleBtn(event)">
-            <input type="image" class='btn' id="btn_play" onclick="clickPlayPauseBtn(event)" src="./Resources/play.png" onmouseover="this.src='./Resources/play-hover.png';" onmouseout="this.src='./Resources/play.png';">
-            <input type="image" class='btn' id="btn_pause" onclick="clickPlayPauseBtn(event)" src="./Resources/pause.png" onmouseover="this.src='./Resources/pause-hover.png';" onmouseout="this.src='./Resources/pause.png';">
+            <input type="image" class='btn' id="btn_repeat"  onclick="clickRepeatBtn(event)" src="./Resources/repeat-off.png" onmouseover="this.src='./Resources/repeat-hover.png';" onmouseout="hoverRepeatBtn(event)" draggable="false">
+            <input type="image" class='btn' id="btn_shuffle" onclick="clickShuffleBtn(event)" src="./Resources/shuffle-off.png" onmouseover="this.src='./Resources/shuffle-hover.png';" onmouseout="hoverShuffleBtn(event)" draggable="false">
+            <input type="image" class='btn' id="btn_play" onclick="clickPlayPauseBtn(event)" src="./Resources/play.png" onmouseover="this.src='./Resources/play-hover.png';" onmouseout="this.src='./Resources/play.png';" draggable="false">
+            <input type="image" class='btn' id="btn_pause" onclick="clickPlayPauseBtn(event)" src="./Resources/pause.png" onmouseover="this.src='./Resources/pause-hover.png';" onmouseout="this.src='./Resources/pause.png';" draggable="false">
             
-            <input type="image" class='albumart' id="albumart_center" src="./Resources/Where-Is-My-Mind.jpg">
-            <input type="image" class='albumart' id="albumart_left" src="./Resources/Abbey-Road.jpg">
-            <input type="image" class='albumart' id="albumart_right" src="./Resources/Dark-Side-of-the-Moon.jpg">
+            <input type="image" class='slider' id="slider_default" src="./Resources/slider-default.png" draggable="false">
+            
+            <input type="image" id="bar_seek" src="./Resources/seekbar.png" draggable="false">
+            <input type="image" id="btn_seek" src="./Resources/seekbar-button-passive.png" onmouseover="this.src='./Resources/seekbar-button-active.png';" onmouseout="this.src='./Resources/seekbar-button-passive.png';" draggable="false">
+            
+            <input type="image" class='albumart' id="albumart_center" src="./Resources/Where-Is-My-Mind.jpg" draggable="false">
+            <input type="image" class='albumart' id="albumart_left" src="./Resources/Abbey-Road.jpg" draggable="false">
+            <input type="image" class='albumart' id="albumart_right" src="./Resources/Dark-Side-of-the-Moon.jpg" draggable="false">
         </div>
         
         <img id="bar_nav" src="./Resources/navbar.png" alt="navBar">
