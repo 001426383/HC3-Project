@@ -74,6 +74,7 @@ div.tabs {
 div.tabs button {
     font-size: 16px;
     background-color: inherit;
+    color:#FFCC33;
     font-variant: small-caps;
     float: left;
     width: 33.33%;
@@ -84,10 +85,9 @@ div.tabs button {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    color:#FFCC33;
 }
 
-div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
+div.tabs button:hover{
     background-color: #FFCC33;
     color:#990033;
 }
@@ -106,7 +106,7 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
     width:inherit;
     overflow: hidden;
     border: 1px solid inherit;
-    background-color: inherit;
+    background-color: #555;
 }
 
 #nestedtab button{
@@ -327,10 +327,9 @@ div.tabs button:active, div.tabs button:hover, div.tabs button:focus {
 }
 
 #btn_new_playlist{
-    position:sticky;
     background: #CCC;
-    top:0px;
-    left:270px;
+    top:10px;
+    right:20px;
     border-radius: 20px;
     border: 2px solid #000;
     height:34px;

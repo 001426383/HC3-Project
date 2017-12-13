@@ -17,6 +17,8 @@ function openTab(evt, tabName) {
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].style.background = "#990033";
+        tablinks[i].style.color = "#FFCC33"; //Set colors back to default
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
@@ -28,7 +30,7 @@ function openTab(evt, tabName) {
 
 function openNestedTab(evt, parent, tabName) {
     // Declare all variables
-    var i, tabcontent, tablinks;
+    var i, tabcontent, tablinks, nestedtablinks;
 
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -38,8 +40,11 @@ function openNestedTab(evt, parent, tabName) {
 
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
+    nestedtablinks = document.getElementsByClassName("nestedtablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
+        nestedtablinks[i].style.background = "#990033";
+        nestedtablinks[i].style.color = "#FFCC33"; //Set colors back to default
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
@@ -65,48 +70,70 @@ function closeTab(evt){
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].style.background = "#990033";
+        tablinks[i].style.color = "#FFCC33"; //Set colors back to default
     }
     document.getElementById('bar_search').value = "";
     document.getElementById('bar_search').placeholder = "Search All";
-    
     
     document.getElementById('dropbox').style.display = "none";
 }
 
 
 function clickLibraryTab(evt){
-    //openTab(evt, "tabcontent_library");
+    openTab(evt, "tabcontent_library");
     clickSongTab(evt);
+    
+    document.getElementById("tablink_library").style.backgroundColor = "#FFCC33";
+    document.getElementById("tablink_library").style.color = "#990033";
 }
 
 function clickPlaylistTab(evt){
     openTab(evt, "tabcontent_playlist");
     document.getElementById('bar_search').placeholder = "Search Playlist";
+    
+    document.getElementById("tablink_playlist").style.backgroundColor = "#FFCC33";
+    document.getElementById("tablink_playlist").style.color = "#990033";
 }
 
 function clickQueueTab(evt){
     openTab(evt, "tabcontent_queue");
     document.getElementById('bar_search').placeholder = "Search Queue";
+    
+    document.getElementById("tablink_queue").style.backgroundColor = "#FFCC33";
+    document.getElementById("tablink_queue").style.color = "#990033";
 }
 
 function clickSongTab(evt){
     openNestedTab(evt, "tabcontent_library", "tabcontent_library_song");
     document.getElementById('bar_search').placeholder = "Search Song";
+    
+    document.getElementById("tablink_library_song").style.backgroundColor = "#FFCC33";
+    document.getElementById("tablink_library_song").style.color = "#990033";
 }
 
 function clickArtistTab(evt){
     openNestedTab(evt, "tabcontent_library", "tabcontent_library_artist");
     document.getElementById('bar_search').placeholder = "Search Artist";
+    
+    document.getElementById("tablink_library_artist").style.backgroundColor = "#FFCC33";
+    document.getElementById("tablink_library_artist").style.color = "#990033";
 }
 
 function clickAlbumTab(evt){
     openNestedTab(evt, "tabcontent_library", "tabcontent_library_album");
     document.getElementById('bar_search').placeholder = "Search Album";
+    
+    document.getElementById("tablink_library_album").style.backgroundColor = "#FFCC33";
+    document.getElementById("tablink_library_album").style.color = "#990033";
 }
 
 function clickSettingsBtn(evt){
     openTab(evt, "tabcontent_settings");
     document.getElementById('bar_search').placeholder = "Search Setting";
+    
+    document.getElementById("tablink_library_song").style.backgroundColor = "#FFCC33";
+    document.getElementById("tablink_library_song").style.color = "#990033";
 }
 
 function clickPlayPauseBtn(evt){
@@ -186,18 +213,22 @@ function switchSongTitle(evt){
     if (filename === "Abbey-Road.jpg"){
         document.getElementById('text_songtitle').innerHTML = "Here Comes The Sun";
         document.getElementById('text_artist').innerHTML = "The Beatles";
+        document.getElementById('time_maximum').innerHTML = "03:06";
     }
     else if (filename === "Where-Is-My-Mind.jpg"){
         document.getElementById('text_songtitle').innerHTML = "Where Is My Mind";
         document.getElementById('text_artist').innerHTML = "The Pixies";
+        document.getElementById('time_maximum').innerHTML = "03:52";
     }
     else if (filename === "Dark-Side-of-the-Moon.jpg"){
         document.getElementById('text_songtitle').innerHTML = "Eclipse";
         document.getElementById('text_artist').innerHTML = "Pink Floyd";
+        document.getElementById('time_maximum').innerHTML = "02:10";
     }
     else{
         document.getElementById('text_songtitle').innerHTML = "Untitled";
         document.getElementById('text_artist').innerHTML = "Unknown Artist";
+        document.getElementById('time_maximum').innerHTML = "05:00";
     }
     document.getElementById('text_time').innerHTML = "00:00";
     

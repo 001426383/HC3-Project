@@ -52,11 +52,7 @@
             
             <input id="bar_search" onclick="openTab(event,'tabcontent_search')" type="search" placeholder="Search All" maxlength="32">
             <div class="tabcontent" id="tabcontent_search">
-                
                 <h4>Search returned zero items.</h4>
-                <div class="item" id="item_sample1">
-                
-                </div>
             </div>
             
             <div class="tabs">
@@ -67,28 +63,153 @@
                 
             <div class="tabcontent" id="tabcontent_library">
                 <div class="tabs" id="nestedtab">
-                    <button class="tablinks" id="tablink_library_song" onclick="clickSongTab(event)">Song</button>
-                    <button class="tablinks" id="tablink_library_artist" onclick="clickArtistTab(event)">Artist</button>
-                    <button class="tablinks" id="tablink_library_album" onclick="clickAlbumTab(event)">Album</button>
+                    <button class="nestedtablinks" id="tablink_library_song" onclick="clickSongTab(event)">Song</button>
+                    <button class="nestedtablinks" id="tablink_library_artist" onclick="clickArtistTab(event)">Artist</button>
+                    <button class="nestedtablinks" id="tablink_library_album" onclick="clickAlbumTab(event)">Album</button>
                 </div>
                 
                 
                 <div class="tabcontent" id="tabcontent_library_song">
-                    <p>This pages lists individual songs.</p>
+                    
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Abbey-Road.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Because</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">The Beatles</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Dark-Side-of-the-Moon.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Eclipse</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">Pink Floyd</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Abbey-Road.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Here Comes The Sun</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">The Beatles</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Abbey-Road.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Something</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">The Beatles</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Dark-Side-of-the-Moon.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Time</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">Pink Floyd</h6>
+                        </div>
+                    </div>
+                    <div class="item" style="background-color: ">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Where Is My Mind</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">The Pixies</h6>
+                        </div>
+                    </div>
+                    <div class="item" style="background-color: ">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Untitled</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">Unknown Artist</h6>
+                        </div>
+                    </div>
+                    
                 </div>
                 
                 <div class="tabcontent" id="tabcontent_library_artist">
-                    <p>This pages lists individual artists.</p>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Dark-Side-of-the-Moon.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Pink Floyd</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">(2 Songs)</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Abbey-Road.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>The Beatles</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">(3 Songs)</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>The Pixies</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">(1 Song)</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/album-stock.png">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Unknwon Artist</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">(1 Song)</h6>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tabcontent" id="tabcontent_library_album">
-                    <p>This pages lists individual albums.</p>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Abbey-Road.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Pink Floyd</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">The Beatles</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Dark-Side-of-the-Moon.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4>Dark Side of The Moon</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">Pink Floyd</h6>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="vertical-align:bottom;">
+                        <input type="image" class='albumart_mini' src="./Resources/Where-Is-My-Mind.jpg">
+                        </div>
+                        <div style="position:relative;">
+                            <h4 style="font-size:14px;">Where Is My Mind (Tribute Album)</h4>
+                            <h6 style="font-variant: small-caps;padding-left: 24px;">The Pixies</h6>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
             
             <div class="tabcontent" id="tabcontent_playlist">
-                <div class="item">
+                <div style="display:flex;">
                     <h4>Pinned</h4>
                     <button class='btn' id="btn_new_playlist">NEW</button>
                 </div>
